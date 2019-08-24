@@ -20,7 +20,7 @@ function TakeFileReturnJson( $fileContent ) {
         // }
 
         $csvString = $DependentDropDownConfig_fileContent;        
-        $csvArray = str_getcsv($csvString);
+        $csvArray = str_getcsv($csvString, "\n");
         print_r($csvArray);
         
     //-------------------------------------------------------------------------
@@ -112,7 +112,7 @@ if(isset($_POST['Submit'])){
     //move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
     $contents = file_get_contents($_FILES["fileToUpload"]["tmp_name"]);
 
-    $displayString = TakeFileReturnJson(nl2br($contents));
+    $displayString = TakeFileReturnJson($contents);
 }    
 ?>
 
