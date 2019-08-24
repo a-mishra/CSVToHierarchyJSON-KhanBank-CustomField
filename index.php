@@ -1,7 +1,6 @@
 <?php
 
 header('Access-Control-Allow-Origin: *');
-header('Content-Type: text/plain');
 
 
 /** MasterFunction That will take in fileName and will return JSON for custom field */
