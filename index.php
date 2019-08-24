@@ -13,13 +13,15 @@ function TakeFileReturnJson( $fileContent ) {
 
     //----converting the csvFile in multiDArray--------------------------------
         $csvArray = array();
+        //--------------------------------------------------------------------
         // $fileOpened = fopen($DependentDropDownConfig_fileHandle, "r");
         // while ($fileData = fgetcsv($fileOpened)) {
         //     array_push($csvArray, $fileData);
         // }
-
-        // --- if using file handle use above part to initialisecavArray else use below part
+        //--------------------------------------------------------------------
         
+        // --- if using file handle use above part to initialise csvArray else use below part
+
         $csvString = $DependentDropDownConfig_fileContent;        
         $csvArray = str_getcsv($csvString, "\n");
 
