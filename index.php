@@ -26,6 +26,7 @@ function TakeFileReturnJson( $fileContent ) {
             $Row = str_getcsv($Row, ",");
             array_push($tempArray, $Row);
         }
+        $csvArray = $tempArray;
 
         print_r($csvArray);
         
