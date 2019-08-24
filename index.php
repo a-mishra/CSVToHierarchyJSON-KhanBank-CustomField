@@ -5,6 +5,7 @@ header('Access-Control-Allow-Origin: *');
 function TakeFileReturnJson( $fileName = "References/sample custom dependent fields - Sheet1.csv") {
     $DependentDropDownConfig = $fileName;
     $returnObject = array();
+    print_r($_REQUEST);
 
 
     //----converting the csvFile in multiDArray--------------------------------
@@ -71,7 +72,7 @@ function possibleValuesList($mainArray) {
     $distinctOptions = distinctOptionsInColumn($mainArray);
 
     for($i = 0 ; $i < count($distinctOptions) ; $i++) {
-        
+
         $subArray = array();
         $subReturnArray['name'] = $distinctOptions[$i];
 
