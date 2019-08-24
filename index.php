@@ -97,9 +97,9 @@ function possibleValuesList($mainArray) {
 <?php    
 if(isset($_POST['Submit'])){
     $target_dir = "uploads/";
-    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $target_file = $target_dir.basename($_FILES["fileToUpload"]["name"]);
     move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-    $displayString = TakeFileReturnJson($target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $displayString = TakeFileReturnJson($target_dir.basename($_FILES["fileToUpload"]["name"]));
 }    
 ?>
 
