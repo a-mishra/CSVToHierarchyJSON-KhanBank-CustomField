@@ -96,7 +96,7 @@ function possibleValuesList($mainArray) {
 
 <?php    
 if(isset($_POST['Submit'])){
-    $displayString = $TakeFileReturnJson();
+    $displayString = TakeFileReturnJson();
 }    
 ?>
 
