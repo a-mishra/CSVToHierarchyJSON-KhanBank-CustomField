@@ -3,9 +3,10 @@
 header('Access-Control-Allow-Origin: *');
 /** MasterFunction That will take in fileName and will return JSON for custom field */
 function TakeFileReturnJson( $fileName = "References/sample custom dependent fields - Sheet1.csv") {
-    $DependentDropDownConfig = $fileName;
+    //$DependentDropDownConfig = $fileName;
+    $DependentDropDownConfig= file_get_contents($fileName);
     $returnObject = array();
-    print_r($_REQUEST);
+    print_r($DependentDropDownConfig);
 
 
     //----converting the csvFile in multiDArray--------------------------------
@@ -97,11 +98,11 @@ function possibleValuesList($mainArray) {
 
 <?php    
 if(isset($_POST['Submit'])){
-    $target_dir = "uploads/";
-    $target_file = $target_dir.basename($_FILES["fileToUpload"]["name"]);
-    print_r($_REQUEST);
+    // $target_dir = "uploads/";
+    // $target_file = $target_dir.basename($_FILES["fileToUpload"]["name"]);
+    // print_r($_REQUEST);
     //move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-    $displayString = TakeFileReturnJson($target_file);
+    $displayString = TakeFileReturnJson($_FILES["fileToUpload"]["name"]);
 }    
 ?>
 
