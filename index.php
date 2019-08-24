@@ -18,6 +18,8 @@ function TakeFileReturnJson( $fileContent ) {
         //     array_push($csvArray, $fileData);
         // }
 
+        // --- if using file handle use above part to initialisecavArray else use below part
+        
         $csvString = $DependentDropDownConfig_fileContent;        
         $csvArray = str_getcsv($csvString, "\n");
 
@@ -28,7 +30,7 @@ function TakeFileReturnJson( $fileContent ) {
         }
         $csvArray = $tempArray;
 
-        print_r($csvArray);
+        //print_r($csvArray);
         
     //-------------------------------------------------------------------------
 
