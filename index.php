@@ -20,6 +20,13 @@ function TakeFileReturnJson( $fileContent ) {
 
         $csvString = $DependentDropDownConfig_fileContent;        
         $csvArray = str_getcsv($csvString, "\n");
+
+        $tempArray = array();
+        foreach($csvArray as $Row) {
+            $Row = str_getcsv($Row, ",");
+            array_push($tempArray, $Row);
+        }
+
         print_r($csvArray);
         
     //-------------------------------------------------------------------------
