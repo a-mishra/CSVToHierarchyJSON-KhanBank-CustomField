@@ -2,9 +2,9 @@
 
 header('Access-Control-Allow-Origin: *');
 /** MasterFunction That will take in fileName and will return JSON for custom field */
-function TakeFileReturnJson( $fileName = "References/sample custom dependent fields - Sheet1.csv") {
+function TakeFileReturnJson( $file = "References/sample custom dependent fields - Sheet1.csv") {
     //$DependentDropDownConfig = $fileName;
-    $DependentDropDownConfig= file_get_contents($fileName);
+    $DependentDropDownConfig= $file;
     $returnObject = array();
     print_r($DependentDropDownConfig);
 
@@ -102,7 +102,10 @@ if(isset($_POST['Submit'])){
     // $target_file = $target_dir.basename($_FILES["fileToUpload"]["name"]);
     // print_r($_REQUEST);
     //move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-    $displayString = TakeFileReturnJson($_FILES["fileToUpload"]["name"]);
+    $file = file_get_contents($_FILES["fileToUpload"]["name"]);
+    print_r($_FILES["fileToUpload"]["name"]);
+    print_r($file);
+    $displayString = TakeFileReturnJson($file);
 }    
 ?>
 
