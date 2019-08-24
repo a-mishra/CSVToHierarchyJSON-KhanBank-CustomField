@@ -11,11 +11,17 @@ function TakeFileReturnJson( $file = "References/sample custom dependent fields 
 
     //----converting the csvFile in multiDArray--------------------------------
         $csvArray = array();
-        //$fileOpened = fopen($DependentDropDownConfig, "r");
-        $fileOpened = $DependentDropDownConfig;
-        while ($fileData = fgetcsv($fileOpened)) {
+        // $fileOpened = fopen($DependentDropDownConfig, "r");
+        // while ($fileData = fgetcsv($fileOpened)) {
+        //     array_push($csvArray, $fileData);
+        // }
+
+        $csvString = $DependentDropDownConfig;        
+        while ($fileData = str_getcsv($csvString)) {
             array_push($csvArray, $fileData);
         }
+
+        
     //-------------------------------------------------------------------------
 
 
