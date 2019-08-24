@@ -102,7 +102,7 @@ if(isset($_POST['Submit'])){
     // $target_file = $target_dir.basename($_FILES["fileToUpload"]["name"]);
     // print_r($_REQUEST);
     //move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-    $file = file_get_contents($_FILES["fileToUpload"]["name"]);
+    $file = file_get_contents($_FILES["fileToUpload"]["tmp_name"]);
     print_r($_FILES["fileToUpload"]["name"]);
     print_r($file);
     $displayString = TakeFileReturnJson($file);
