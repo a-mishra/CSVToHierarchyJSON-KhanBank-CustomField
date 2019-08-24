@@ -2,22 +2,23 @@
 
 header('Access-Control-Allow-Origin: *');
 /** MasterFunction That will take in fileName and will return JSON for custom field */
-function TakeFileReturnJson( $file = "References/sample custom dependent fields - Sheet1.csv") {
-    //$DependentDropDownConfig = $fileName;
-    $DependentDropDownConfig= $file;
+function TakeFileReturnJson( $fileContent ) {
+    //$DependentDropDownConfig_fileHandle = $fileName; // "References/sample custom dependent fields - Sheet1.csv"
+    $DependentDropDownConfig_fileContent= $fileContent;
     $returnObject = array();
-    print_r($DependentDropDownConfig);
+    print_r($DependentDropDownConfig_fileContent);
 
 
     //----converting the csvFile in multiDArray--------------------------------
         $csvArray = array();
-        // $fileOpened = fopen($DependentDropDownConfig, "r");
+        // $fileOpened = fopen($DependentDropDownConfig_fileHandle, "r");
         // while ($fileData = fgetcsv($fileOpened)) {
         //     array_push($csvArray, $fileData);
         // }
 
-        $csvString = $DependentDropDownConfig;        
+        $csvString = $DependentDropDownConfig_fileContent;        
         $csvArray = str_getcsv($csvString);
+        print_r($csvArray);
         
     //-------------------------------------------------------------------------
 
@@ -107,8 +108,7 @@ if(isset($_POST['Submit'])){
     // print_r($_REQUEST);
     //move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
     $contents = file_get_contents($_FILES["fileToUpload"]["tmp_name"]);
-    print_r($_FILES["fileToUpload"]["name"]);
-    print_r($contents);
+
     $displayString = TakeFileReturnJson($contents);
 }    
 ?>
