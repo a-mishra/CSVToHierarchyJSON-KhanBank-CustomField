@@ -8,7 +8,7 @@ function TakeFileReturnJson( $fileContent ) {
     //$DependentDropDownConfig_fileHandle = $fileName; // "References/sample custom dependent fields - Sheet1.csv"
     $DependentDropDownConfig_fileContent= $fileContent;
     $returnObject = array();
-    print_r($DependentDropDownConfig_fileContent);
+
 
 
     //----converting the csvFile in multiDArray--------------------------------
