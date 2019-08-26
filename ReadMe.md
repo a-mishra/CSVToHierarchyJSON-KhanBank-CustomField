@@ -1,21 +1,178 @@
-objects : 
----------------------------
-label : {"0":"cat","1":"sc1" ,"2":"sc1" ,"3":"sc3" ,"4":"sc4" ,"5":"sc5" }
-values : {
-    possibleValueList:{
-                {
-                    "name": "care"
-                },
-                {
-                    "name": "Гомдол бүртгүүлэх-1"
-                },
-                {
-                    "name": "Гомдол бүртгүүлэх-2"
-                }
+Sample JSON Created : 
+========================================================================================================================
+```
+
+{
+    "label":
+    {
+        "1": "Categoty",
+        "2": "Category2",
+        "3": "Category3",
+        "4": "Category4",
+        "5": "Category5"
+    },
+    "value":
+    {
+        "possibleValueList":
+        [
+            {
+                "name": "Vehicles",
+                "possibleValueList":
+                [
+                    {
+                        "name": "1 wheel",
+                        "possibleValueList":
+                        [
+                            {
+                                "name": "onewheel"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2 wheers",
+                        "possibleValueList":
+                        [
+                            {
+                                "name": "Expensive",
+                                "possibleValueList":
+                                [
+                                    {"name":"Ducati"},
+                                    {"name":"Ecosse"},
+                                    {"name":"Kawasaki"},
+                                    {"name":"Harley Davidson"}
+                                ]
+                            },
+                            {
+                                "name": "Midrange",
+                                "possibleValueList":
+                                [
+                                    {"name":"Royal Enfield"}
+                                ]
+                            },
+                            {
+                                "name": "Pocket Friendly",
+                                "possibleValueList":
+                                [
+                                    {"name":"Bajaj"},
+                                    {"name":"Yamaha"}
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3 wheelers",
+                        "possibleValueList":
+                        [
+                            {
+                                "name": "Piagiio"
+                            },
+                            {
+                                "name": "Bajaj"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4 wheelers",
+                        "possibleValueList":
+                        [
+                            {
+                                "name": "Expensive",
+                                "possibleValueList":
+                                [
+                                    {"name":"bmw"},
+                                    {"name":"audi","possibleValueList":[{"name":"A8"},{"name":"A7"},{"name":"A6"},{"name":"X1"}]},
+                                    {"name":"mercedes","possibleValueList":[{"name":"E Class"},{"name":"S Class"}]},
+                                    {"name":"volswagen","possibleValueList":[{"name":"E Class"},{"name":"S Class"}]},
+                                    {"name":"Jeep","possibleValueList":[{"name":"E Class"},{"name":"S Class"}]}
+                                ]
+                            },
+                            {
+                                "name": "Midrange",
+                                "possibleValueList":
+                                [
+                                    {"name":"Maruti Suzuki","possibleValueList":[{"name":"Swift"}]},
+                                    {"name":"Hundai","possibleValueList":[{"name":"Swift"}]}
+                                ]
+                            },
+                            {
+                                "name": "Pocket Friendly",
+                                "possibleValueList":
+                                [
+                                    {"name":"Marutti Suzuki"},
+                                    {"name":"Tata"},
+                                    {"name":"Hundai"}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Watches",
+                "possibleValueList":
+                [
+                    {
+                        "name": "Expensive",
+                        "possibleValueList":
+                        [
+                            {
+                                "name": "Patek Philippe"
+                            },
+                            {
+                                "name": "Audemars Piguet."
+                            },
+                            {
+                                "name": "Vacheron Constantin."
+                            },
+                            {
+                                "name": "Tag Heuer."
+                            },
+                            {
+                                "name": "Lange & Söhne."
+                            },
+                            {
+                                "name": "Jaeger-LeCoultre."
+                            },
+                            {
+                                "name": "Rolex."
+                            },
+                            {
+                                "name": "Hublot."
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Midrange",
+                        "possibleValueList":
+                        [
+                            {
+                                "name": "Fossil"
+                            },
+                            {
+                                "name": "Tissot"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Pocket Friendly",
+                        "possibleValueList":
+                        [
+                            {
+                                "name": "Timex"
+                            },
+                            {
+                                "name": "Maxima"
+                            },
+                            {
+                                "name": "Fasttrack"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 }
 
-------------------
 
-{"label":{"1":"Sub category ","2":"Subclass_1","3":"Subclass_2","4":"Subclass_3","5":"Subclass_4"},"value":{"possibleValueList":[{"name":"Гомдол бүртгүүлэх","possibleValueList":[{"name":"Картын гүйлгээ","possibleValueList":[{"name":"АТМ","possibleValueList":[{"name":"ХААН Банк","possibleValueList":[{"name":"Орлого ороогүй"},{"name":"АТМ-с баримт гараагүй/хураамж хасагдсан/"}]},{"name":"Арын харилцагч мөнгө олсон мэдээлэл"}]},{"name":"ПОС"},{"name":"Е-коммерс  (КҮБ-ээс ирсэн гомдол)"},{"name":"Е коммерс"},{"name":"ОУ-д хийгдсэн гүйлгээ"}]},{"name":"Нөхөн олговор-Капитал банк"},{"name":"Зээлтэй холбоотой"}]},{"name":"care"},{"name":"Гомдол бүртгүүлэх-1"},{"name":"Гомдол бүртгүүлэх-2"}]}}
-
+```
