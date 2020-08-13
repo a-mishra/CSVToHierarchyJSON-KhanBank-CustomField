@@ -1,8 +1,5 @@
 <?php
 
-header('Access-Control-Allow-Origin: *');
-
-
 /**This Metod will be used for logging purpose  */
 function debugLog($message) {
     $logfile = './logs';
@@ -18,34 +15,35 @@ function debugLog($message) {
 }
 
 
-/** MasterFunction That will take in fileName and will return JSON for custom field */
-function TakeFileReturnJson( $fileContent ) {
-    //$DependentDropDownConfig_fileHandle = $fileName; // "References/sample custom dependent fields - Sheet1.csv"
-    $DependentDropDownConfig_fileContent= $fileContent;
+function TakeFileReturnJson( $fileName ) {
+    // debugLog("Iam called");
+    error_log("Iam called", 3, 'logs.log');
+    $DependentDropDownConfig_fileHandle = $fileName; // "References/sample custom dependent fields - Sheet1.csv"
+    // $DependentDropDownConfig_fileContent= $fileContent;
     $returnObject = array();
 
-    debugLog("TakeFileReturnJson : called : ");
-    echo($fileContent);
+
+
     //----converting the csvFile in multiDArray--------------------------------
         $csvArray = array();
         //--------------------------------------------------------------------
-        // $fileOpened = fopen($DependentDropDownConfig_fileHandle, "r");
-        // while ($fileData = fgetcsv($fileOpened)) {
-        //     array_push($csvArray, $fileData);
-        // }
+        $fileOpened = fopen($DependentDropDownConfig_fileHandle, "r");
+        while ($fileData = fgetcsv($fileOpened)) {
+            array_push($csvArray, $fileData);
+        }
         //--------------------------------------------------------------------
         
         // --- if using file handle use above part to initialise csvArray else use below part
 
-        $csvString = $DependentDropDownConfig_fileContent;        
-        $csvArray = str_getcsv($csvString, "\n");
+        // $csvString = $DependentDropDownConfig_fileContent;        
+        // $csvArray = str_getcsv($csvString, "\n");
 
-        $tempArray = array();
-        foreach($csvArray as $Row) {
-            $Row = str_getcsv($Row, ",");
-            array_push($tempArray, $Row);
-        }
-        $csvArray = $tempArray;
+        // $tempArray = array();
+        // foreach($csvArray as $Row) {
+        //     $Row = str_getcsv($Row, ",");
+        //     array_push($tempArray, $Row);
+        // }
+        // $csvArray = $tempArray;
 
         //print_r($csvArray);
         
@@ -130,30 +128,9 @@ function possibleValuesList($mainArray) {
     return $returnArray;
 }
 
+
+
+
+print_r(TakeFileReturnJson('yogi.csv'));
+
 ?>
-
-
-
-<?php
-    $displayString = '';
-
-    if(isset($_POST['Submit'])){
-        $contents = file_get_contents($_FILES["fileToUpload"]["tmp_name"]);
-        $displayString = TakeFileReturnJson($contents);
-    }    
-?>
-
-<html>
-    <body>    
-        <form action="#" method="post" enctype="multipart/form-data">
-            Select CSV File : 
-            <input type="file" name="fileToUpload"/>
-            <input type="submit" name="Submit"/>
-
-            <p>
-                <?php echo $displayString; ?>
-            </p>
-
-        </form>    
-    </body>
-</html>

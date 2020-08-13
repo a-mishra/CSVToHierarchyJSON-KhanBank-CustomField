@@ -1,51 +1,32 @@
 <?php
 
-header('Access-Control-Allow-Origin: *');
-
-
-/**This Metod will be used for logging purpose  */
-function debugLog($message) {
-    $logfile = './logs';
-
-        if (!file_exists($logfile)) {
-            mkdir($logfile, 0777, true);
-        }
-
-        $log_file_data = $logfile.'/logs_'.date('d-M-Y').'.log';
-    $now     = "\n[" . date("Y-M-d H:i:s") . "] ";
-    $message = $now . $message;
-    error_log($message, 3, $log_file_data);
-}
-
-
-/** MasterFunction That will take in fileName and will return JSON for custom field */
 function TakeFileReturnJson( $fileContent ) {
-    //$DependentDropDownConfig_fileHandle = $fileName; // "References/sample custom dependent fields - Sheet1.csv"
-    $DependentDropDownConfig_fileContent= $fileContent;
+    $DependentDropDownConfig_fileHandle = $fileName; // "References/sample custom dependent fields - Sheet1.csv"
+    // $DependentDropDownConfig_fileContent= $fileContent;
     $returnObject = array();
 
-    debugLog("TakeFileReturnJson : called : ");
-    echo($fileContent);
+
+
     //----converting the csvFile in multiDArray--------------------------------
         $csvArray = array();
         //--------------------------------------------------------------------
-        // $fileOpened = fopen($DependentDropDownConfig_fileHandle, "r");
-        // while ($fileData = fgetcsv($fileOpened)) {
-        //     array_push($csvArray, $fileData);
-        // }
+        $fileOpened = fopen($DependentDropDownConfig_fileHandle, "r");
+        while ($fileData = fgetcsv($fileOpened)) {
+            array_push($csvArray, $fileData);
+        }
         //--------------------------------------------------------------------
         
         // --- if using file handle use above part to initialise csvArray else use below part
 
-        $csvString = $DependentDropDownConfig_fileContent;        
-        $csvArray = str_getcsv($csvString, "\n");
+        // $csvString = $DependentDropDownConfig_fileContent;        
+        // $csvArray = str_getcsv($csvString, "\n");
 
-        $tempArray = array();
-        foreach($csvArray as $Row) {
-            $Row = str_getcsv($Row, ",");
-            array_push($tempArray, $Row);
-        }
-        $csvArray = $tempArray;
+        // $tempArray = array();
+        // foreach($csvArray as $Row) {
+        //     $Row = str_getcsv($Row, ",");
+        //     array_push($tempArray, $Row);
+        // }
+        // $csvArray = $tempArray;
 
         //print_r($csvArray);
         
@@ -85,8 +66,7 @@ function distinctOptionsInColumn($csvArray) {
     $distinctValuesArray = array();
 
     for($i = 0; $i < count($csvArray) ; $i++) {
-        if($csvArray[$i][0] != NULL && $csvArray[$i][0] != "" && trim($csvArray[$i][0]) != "" && trim($csvArray[$i][0]) != NULL)
-            array_push($distinctValuesArray, $csvArray[$i][0]);
+        array_push($distinctValuesArray, $csvArray[$i][0]);
     }
 
     $distinctValuesArray = array_unique($distinctValuesArray);
@@ -106,11 +86,10 @@ function possibleValuesList($mainArray) {
     $returnArray = array();
 
     $distinctOptions = distinctOptionsInColumn($mainArray);
-    // print_r($mainArray);
+
     for($i = 0 ; $i < count($distinctOptions) ; $i++) {
 
         $subArray = array();
-        $subReturnArray = array();
         $subReturnArray['name'] = $distinctOptions[$i];
 
         for($j = 0; $j < count($mainArray); $j++) {
@@ -119,11 +98,9 @@ function possibleValuesList($mainArray) {
             }
         }
 
-        if(count($subArray[0]) > 0 && $subArray[0][0]!= '' && $subArray[0][0]!= NULL ){
+        if(count($subArray[0]) > 0 && $subArray[0][0]!= '' ){
             $subReturnArray['possibleValueList'] =  possibleValuesList($subArray);
-        } else {
-            // $subReturnArray['possibleValueList'] = array();
-        }
+        }    
         array_push($returnArray,$subReturnArray);  
     }
 
@@ -131,29 +108,3 @@ function possibleValuesList($mainArray) {
 }
 
 ?>
-
-
-
-<?php
-    $displayString = '';
-
-    if(isset($_POST['Submit'])){
-        $contents = file_get_contents($_FILES["fileToUpload"]["tmp_name"]);
-        $displayString = TakeFileReturnJson($contents);
-    }    
-?>
-
-<html>
-    <body>    
-        <form action="#" method="post" enctype="multipart/form-data">
-            Select CSV File : 
-            <input type="file" name="fileToUpload"/>
-            <input type="submit" name="Submit"/>
-
-            <p>
-                <?php echo $displayString; ?>
-            </p>
-
-        </form>    
-    </body>
-</html>
