@@ -25,7 +25,7 @@ html {
 
 
 .coloredButton{
-    background: #478CDC;
+    background: #5a8ed1dd;
     color: #fff
 }
 
@@ -36,13 +36,13 @@ html {
     color: #fff;
     /* height: 56px; */
     /* background: url('../assets/demos/welcome_card.jpg') center / cover; */
-    background: #478CDC;
+    background: #5a8ed1dd;
   }
   .demo-card-wide > .mdl-card__menu {
     color: #fff;
   }
   .mdl-card__supporting-text{
-      height:296px;
+      height:272px;
       overflow-y: scroll;
   }
 
@@ -56,7 +56,6 @@ html {
 }
 /* Optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
-    background: #FF0000;
 }
 
 .centeredGrid {
@@ -71,13 +70,42 @@ html {
 }
 
 .mainContainer {
-    height: calc( 100% - 60px );
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
-footer {
+/* footer {
     margin-top: 8px;
-}
+} */
 
 .zeroMargin {
     margin:0px;
+}
+
+main {
+    overflow-y: scroll;
+    /* max-height: calc( 100vh - 52px); */
+    padding: 8px;
+
+}
+
+footer {
+    padding: 8px 16px !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+}
+
+.mdl-layout__header {
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    background: #5a8ed1;
+}
+
+.mdl-layout__header > .mdl-layout__header-row {
+height: 48px !important;
+min-height: 48px !important;
+max-height: 48px !important;
 }

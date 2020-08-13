@@ -166,68 +166,96 @@ function possibleValuesList($mainArray) {
 
 </head>
     <body>
-        <div class="container mdl-grid mdl-grid--no-spacing centeredGrid mainContainer">
-            <div class="mdl-grid centeredGrid">
-                <form action="#" method="post" enctype="multipart/form-data">
-                    <!-- Select CSV File : 
-                    <input type="file" name="fileToUpload" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"/>
-                    <input type="submit" name="Submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"/> -->
 
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
-                        <input class="mdl-textfield__input" placeholder="File" type="text" id="uploadFile" readonly/>
-                        <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
-                            <i class="material-icons">attach_file</i><input type="file" name="fileToUpload" id="uploadBtn">
-                        </div>
-                    </div>
-                    <input type="submit" name="Submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect coloredButton"/>
-                </form>
+        <div class="mainContainer">
+
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">Hierarchical JSON Creation Tool</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <!-- <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+            </nav> -->
             </div>
+        </header>
 
+            <main>
+                <div class="centeredGrid">
+                    <form action="#" method="post" enctype="multipart/form-data">
+                        <!-- Select CSV File : 
+                        <input type="file" name="fileToUpload" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"/>
+                        <input type="submit" name="Submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"/> -->
 
-            <div id="jsonCard">
-                <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title">
-                        <div class="mdl-grid mdl-grid--no-spacing zeroMargin" >
-                            <div class="mdl-cell mdl-cell--12-col">
-                                <h2 class="mdl-card__title-text">Generated JSON</h2>
-                            </div>
-                            <div class="mdl-cell mdl-cell--12-col">
-                                <?php echo "(".$fileName.")";?>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
+                            <input class="mdl-textfield__input" placeholder="File" type="text" id="uploadFile" readonly/>
+                            <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
+                                <i class="material-icons">attach_file</i><input type="file" name="fileToUpload" id="uploadBtn">
                             </div>
                         </div>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        <textarea id="generatedJSON" readonly><?php echo trim($displayString); ?></textarea>
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick='copyGeneratedJSON()'>
-                        Copy To Clipboard
-                        </a>
-                    </div>
-                    <div class="mdl-card__menu">
-                        <!-- <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                        <i class="material-icons">share</i>
-                        </button> -->
+                        <input type="submit" name="Submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect coloredButton"/>
+                    </form>
+                </div>
+
+
+                <div class="centeredGrid">
+                    <div id="jsonCard">
+                        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                            <div class="mdl-card__title">
+                                <div class="mdl-grid mdl-grid--no-spacing zeroMargin" >
+                                    <div class="mdl-cell mdl-cell--12-col">
+                                        <h2 class="mdl-card__title-text">Generated JSON</h2>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--12-col">
+                                        <?php echo "(".$fileName.")";?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <textarea id="generatedJSON" readonly><?php echo trim($displayString); ?></textarea>
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick='copyGeneratedJSON()'>
+                                Copy To Clipboard
+                                </a>
+                            </div>
+                            <div class="mdl-card__menu">
+                                <!-- <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                <i class="material-icons">share</i>
+                                </button> -->
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <script>
-                var jsonString = "<?php echo $displayString; ?>";
-                if(jsonString == '' ||jsonString == null) {
-                    document.getElementById('jsonCard').style.display = 'none'
-                }
-            </script>
+
+            </main>
+
+            <footer class="mdl-mini-footer" >
+                <div class="mdl-mini-footer__left-section">
+                    <div class="mdl-logo"> © - Ashutosh Mishra</div>
+                    <ul class="mdl-mini-footer__link-list">
+                        <li><a href="https://www.linkedin.com/in/a-mishra/"><i class="zmdi zmdi-linkedin-box mdc-text-grey zmdi-hc-lg"></i></a></li>
+                        <li><a href="https://github.com/a-mishra"><i class="zmdi zmdi-github mdc-text-grey zmdi-hc-lg"></i></a></li>
+                    </ul>
+                    <!-- <a href="https://www.linkedin.com/in/a-mishra/"><i class="zmdi zmdi-linkedin-box mdc-text-grey zmdi-hc-lg"></i></a>
+                    <a href="https://github.com/a-mishra"><i class="zmdi zmdi-github mdc-text-grey zmdi-hc-lg"></i></a> -->
+                </div>
+            </footer>
+            
         </div>
 
-        <footer class="mdl-mini-footer" style="position:absolute; bottom:0px; right:0px; left:0px;  padding: 8px 16px;">
-            <div class="mdl-mini-footer__left-section">
-                <div class="mdl-logo"> © - Ashutosh Mishra</div>
-                <ul class="mdl-mini-footer__link-list">
-                    <li><a href="https://www.linkedin.com/in/a-mishra/"><i class="zmdi zmdi-linkedin-box mdc-text-grey zmdi-hc-lg"></i></a></li>
-                    <li><a href="https://github.com/a-mishra"><i class="zmdi zmdi-github mdc-text-grey zmdi-hc-lg"></i></a></li>
-                </ul>
-            </div>
-        </footer>
     </body>
+
+    <script>
+        var jsonString = "<?php echo $displayString; ?>";
+        if(jsonString == '' ||jsonString == null) {
+            document.getElementById('jsonCard').style.display = 'none'
+        }
+    </script>
     <script src="js/custom.js"></script>
+
 </html>
