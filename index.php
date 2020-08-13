@@ -138,9 +138,12 @@ function possibleValuesList($mainArray) {
     $displayString = '';
     $fileName = '';
     if(isset($_POST['Submit'])){
-        $fileName = file_get_contents($_FILES);
+        $fileName = $_FILES["fileToUpload"]['name'];
+        // echo $fileName ;
         $contents = file_get_contents($_FILES["fileToUpload"]["tmp_name"]);
         $displayString = TakeFileReturnJson($contents);
+        // echo "done";
+        // exit;
     }    
 ?>
 
@@ -184,7 +187,14 @@ function possibleValuesList($mainArray) {
             <div id="jsonCard">
                 <div class="demo-card-wide mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">Generated JSON</h2>
+                        <div class="mdl-grid mdl-grid--no-spacing ">
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <h2 class="mdl-card__title-text">Generated JSON</h2>
+                            </div>
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <?php echo "(".$fileName.")";?>
+                            </div>
+                        </div>
                     </div>
                     <div class="mdl-card__supporting-text">
                         <textarea id="generatedJSON" readonly><?php echo trim($displayString); ?></textarea>

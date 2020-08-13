@@ -34,7 +34,7 @@ html {
   }
   .demo-card-wide > .mdl-card__title {
     color: #fff;
-    height: 56px;
+    /* height: 56px; */
     /* background: url('../assets/demos/welcome_card.jpg') center / cover; */
     background: #478CDC;
   }
@@ -42,7 +42,7 @@ html {
     color: #fff;
   }
   .mdl-card__supporting-text{
-      height:332px;
+      height:296px;
       overflow-y: scroll;
   }
 
