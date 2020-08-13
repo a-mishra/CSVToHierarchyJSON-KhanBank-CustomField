@@ -25,7 +25,7 @@ function TakeFileReturnJson( $fileContent ) {
     $returnObject = array();
 
     debugLog("TakeFileReturnJson : called : ");
-    echo($fileContent);
+    // echo($fileContent);
     //----converting the csvFile in multiDArray--------------------------------
         $csvArray = array();
         //--------------------------------------------------------------------
