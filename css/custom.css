@@ -92,9 +92,9 @@ main {
 
 footer {
     padding: 8px 16px !important;
-    height: 48px !important;
-    min-height: 48px !important;
-    max-height: 48px !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
 }
 
 .mdl-layout__header {
