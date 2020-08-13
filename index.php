@@ -187,7 +187,7 @@ function possibleValuesList($mainArray) {
             <div id="jsonCard">
                 <div class="demo-card-wide mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title">
-                        <div class="mdl-grid mdl-grid--no-spacing ">
+                        <div class="mdl-grid mdl-grid--no-spacing zeroMargin" >
                             <div class="mdl-cell mdl-cell--12-col">
                                 <h2 class="mdl-card__title-text">Generated JSON</h2>
                             </div>

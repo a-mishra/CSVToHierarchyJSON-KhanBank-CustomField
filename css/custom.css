@@ -77,3 +77,7 @@ html {
 footer {
     margin-top: 8px;
 }
+
+.zeroMargin {
+    margin:0px;
+}
