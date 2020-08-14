@@ -87,6 +87,7 @@ main {
     overflow-y: scroll;
     /* max-height: calc( 100vh - 52px); */
     padding: 8px;
+    min-height: calc( 100vh - 120px);
 
 }
 

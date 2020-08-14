@@ -169,22 +169,25 @@ function possibleValuesList($mainArray) {
 
         <div class="mainContainer">
 
-        <header class="mdl-layout__header">
-            <div class="mdl-layout__header-row">
-            <!-- Title -->
-            <span class="mdl-layout-title">Hierarchical JSON Creation Tool</span>
-            <!-- Add spacer, to align navigation to the right -->
-            <!-- <div class="mdl-layout-spacer"></div>
-            <nav class="mdl-navigation mdl-layout--large-screen-only">
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-            </nav> -->
-            </div>
-        </header>
+        <div class="mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">Hierarchical JSON Creation Tool</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <!-- <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                </nav> -->
+                </div>
+            </header>
+        </div>
 
-            <main>
+
+            <main class="centeredGrid">
                 <div class="centeredGrid">
                     <form action="#" method="post" enctype="multipart/form-data">
                         <!-- Select CSV File : 
@@ -237,12 +240,13 @@ function possibleValuesList($mainArray) {
             <footer class="mdl-mini-footer" >
                 <div class="mdl-mini-footer__left-section">
                     <div class="mdl-logo"> © - Ashutosh Mishra</div>
+                </div>
+
+                <div class="mdl-mini-footer__right-section">
                     <ul class="mdl-mini-footer__link-list">
                         <li><a href="https://www.linkedin.com/in/a-mishra/"><i class="zmdi zmdi-linkedin-box mdc-text-grey zmdi-hc-lg"></i></a></li>
                         <li><a href="https://github.com/a-mishra"><i class="zmdi zmdi-github mdc-text-grey zmdi-hc-lg"></i></a></li>
                     </ul>
-                    <!-- <a href="https://www.linkedin.com/in/a-mishra/"><i class="zmdi zmdi-linkedin-box mdc-text-grey zmdi-hc-lg"></i></a>
-                    <a href="https://github.com/a-mishra"><i class="zmdi zmdi-github mdc-text-grey zmdi-hc-lg"></i></a> -->
                 </div>
             </footer>
             
