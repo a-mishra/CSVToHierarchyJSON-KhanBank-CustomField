@@ -152,7 +152,7 @@ function possibleValuesList($mainArray) {
 <link rel="stylesheet" href="css/material.min.css">
 <script src="js/material.min.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" type="text/css" href="css/material-design-iconic-font.css">
+<!-- <link rel="stylesheet" type="text/css" href="css/material-design-iconic-font.css"> -->
 <link rel="stylesheet" type="text/css" href="css/material-design-iconic-font.min.css">
 
 <link rel="stylesheet" type="text/css" href="css/custom.css">
@@ -169,22 +169,22 @@ function possibleValuesList($mainArray) {
 
         <div class="mainContainer">
 
-        <div class="mdl-layout--fixed-header">
-            <header class="mdl-layout__header">
-                <div class="mdl-layout__header-row">
-                <!-- Title -->
-                <span class="mdl-layout-title">Hierarchical JSON Creation Tool</span>
-                <!-- Add spacer, to align navigation to the right -->
-                <!-- <div class="mdl-layout-spacer"></div>
-                <nav class="mdl-navigation mdl-layout--large-screen-only">
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                </nav> -->
-                </div>
-            </header>
-        </div>
+            <div class="mdl-layout--fixed-header">
+                <header class="mdl-layout__header">
+                    <div class="mdl-layout__header-row">
+                    <!-- Title -->
+                    <span class="mdl-layout-title">Hierarchical JSON Creation Tool</span>
+                    <!-- Add spacer, to align navigation to the right -->
+                    <!-- <div class="mdl-layout-spacer"></div>
+                    <nav class="mdl-navigation mdl-layout--large-screen-only">
+                        <a class="mdl-navigation__link" href="">Link</a>
+                        <a class="mdl-navigation__link" href="">Link</a>
+                        <a class="mdl-navigation__link" href="">Link</a>
+                        <a class="mdl-navigation__link" href="">Link</a>
+                    </nav> -->
+                    </div>
+                </header>
+            </div>
 
 
             <main class="centeredGrid">
@@ -261,5 +261,16 @@ function possibleValuesList($mainArray) {
         }
     </script>
     <script src="js/custom.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175475548-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-175475548-1');
+    </script>
+
 
 </html>
